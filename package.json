@@ -1,0 +1,43 @@
+{
+  "name": "fastfeet02",
+  "version": "1.0.0",
+  "description": "Bootcamp GoStack Desafio 02",
+  "main": "index.js",
+  "repository": "git@github.com:rafaelmf3/bootcamp-gostack-desafio-02.git",
+  "author": "Rafael Marinho <rafael_mf3@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn docker-start && nodemon src/server.js",
+    "dev:debug": "yarn docker-start && nodemon --inspect src/server.js",
+    "docker-start": "node ./utils/docker-start.js",
+    "queue": "yarn docker-start && nodemon src/queue.js",
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "start": "node dist/server.js",
+    "create-data": "yarn sequelize db:create && yarn sequelize db:migrate",
+    "seed": "yarn sequelize db:seed:all"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5",
+    "shelljs": "^0.8.3",
+    "youch": "^2.0.10",
+    "yup": "^0.28.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "sequelize-cli": "^5.5.1",
+    "sucrase": "^3.12.1"
+  }
+}
